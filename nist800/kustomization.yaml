@@ -16,4 +16,3 @@ resources: # specifies the path to each required policy
   - ../policies/PersistentVolumeReclaimPolicy/policy.yaml
   - ../policies/RBACClusterRoleClusterAdmin/policy.yaml
   - ../policies/ServiceAccountDisableTokenAutomount/policy.yaml
-  - ../policies/ServiceRestrictProtocols/policy.yaml

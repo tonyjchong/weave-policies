@@ -2,5 +2,17 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources: # specifies the path to each required policy 
   - ../policies/ControllerContainerAllowingPrivilegeEscalation/policy.yaml
-  - ../policies/ControllerContainerBlockHostPath/policy.yaml
+  - ../policies/ControllerContainerBlockPortsRange/policy.yaml
+  - ../policies/ControllerContainerBlockSSHPort/policy.yaml
+  - ../policies/ControllerContainerBlockSysctls/policy.yaml
+  - ../policies/ControllerContainerBlockSysctls_CVE-2022-0811/policy.yaml
+  - ../policies/ControllerContainerLinuxCapabilities/policy.yaml
   - ../policies/ControllerContainerRunningAsRoot/policy.yaml
+  - ../policies/ControllerContainerRunningAsUser/policy.yaml
+  - ../policies/ControllerContainerRunningPrivilegedMode/policy.yaml
+  - ../policies/ControllerContainerServiceAccountTokenAutomount/policy.yaml
+  - ../policies/ControllerContainerUsingHostPort/policy.yaml
+  - ../policies/ControllerMissingSecurityContext/policy.yaml
+  - ../policies/PersistentVolumeReclaimPolicy/policy.yaml
+  - ../policies/RBACClusterRoleClusterAdmin/policy.yaml
+  - ../policies/ServiceAccountDisableTokenAutomount/policy.yaml

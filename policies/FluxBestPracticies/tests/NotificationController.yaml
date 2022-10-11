@@ -1,0 +1,371 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-controller
+  namespace: flux-system
+  uid: c7cf4395-b333-4d83-aad9-621bce8d60b6
+  resourceVersion: '1067'
+  generation: 1
+  creationTimestamp: '2022-10-06T20:06:47Z'
+  labels:
+    app.kubernetes.io/instance: flux-system
+    app.kubernetes.io/part-of: flux
+    app.kubernetes.io/version: v0.30.2
+    control-plane: controller
+    kustomize.toolkit.fluxcd.io/name: flux-system
+    kustomize.toolkit.fluxcd.io/namespace: flux-system
+  annotations:
+    deployment.kubernetes.io/revision: '1'
+  managedFields:
+    - manager: flux
+      operation: Apply
+      apiVersion: apps/v1
+      time: '2022-10-06T20:06:47Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:control-plane: {}
+        f:spec:
+          f:replicas: {}
+          f:selector: {}
+          f:strategy: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                f:prometheus.io/port: {}
+                f:prometheus.io/scrape: {}
+              f:creationTimestamp: {}
+              f:labels:
+                f:app: {}
+            f:spec:
+              f:containers:
+                k:{"name":"manager"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    k:{"name":"RUNTIME_NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    f:httpGet:
+                      f:path: {}
+                      f:port: {}
+                  f:name: {}
+                  f:ports:
+                    k:{"containerPort":8080,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":9090,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":9292,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":9440,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    f:httpGet:
+                      f:path: {}
+                      f:port: {}
+                  f:resources:
+                    f:limits:
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext:
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      f:drop: {}
+                    f:readOnlyRootFilesystem: {}
+                    f:runAsNonRoot: {}
+                    f:seccompProfile:
+                      f:type: {}
+                  f:volumeMounts:
+                    k:{"mountPath":"/tmp"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:nodeSelector: {}
+              f:securityContext:
+                f:fsGroup: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                k:{"name":"temp"}:
+                  .: {}
+                  f:emptyDir: {}
+                  f:name: {}
+    - manager: kustomize-controller
+      operation: Apply
+      apiVersion: apps/v1
+      time: '2022-10-06T20:07:28Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:labels:
+            f:app.kubernetes.io/instance: {}
+            f:app.kubernetes.io/part-of: {}
+            f:app.kubernetes.io/version: {}
+            f:control-plane: {}
+            f:kustomize.toolkit.fluxcd.io/name: {}
+            f:kustomize.toolkit.fluxcd.io/namespace: {}
+        f:spec:
+          f:replicas: {}
+          f:selector: {}
+          f:strategy: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                f:prometheus.io/port: {}
+                f:prometheus.io/scrape: {}
+              f:creationTimestamp: {}
+              f:labels:
+                f:app: {}
+            f:spec:
+              f:containers:
+                k:{"name":"manager"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    k:{"name":"RUNTIME_NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        f:fieldRef: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:livenessProbe:
+                    f:httpGet:
+                      f:path: {}
+                      f:port: {}
+                  f:name: {}
+                  f:ports:
+                    k:{"containerPort":8080,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":9090,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":9292,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                    k:{"containerPort":9440,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    f:httpGet:
+                      f:path: {}
+                      f:port: {}
+                  f:resources:
+                    f:limits:
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext:
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      f:drop: {}
+                    f:readOnlyRootFilesystem: {}
+                    f:runAsNonRoot: {}
+                    f:seccompProfile:
+                      f:type: {}
+                  f:volumeMounts:
+                    k:{"mountPath":"/tmp"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:nodeSelector: {}
+              f:securityContext:
+                f:fsGroup: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                k:{"name":"temp"}:
+                  .: {}
+                  f:emptyDir: {}
+                  f:name: {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2022-10-06T20:07:17Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:availableReplicas: {}
+          f:conditions:
+            .: {}
+            k:{"type":"Available"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+            k:{"type":"Progressing"}:
+              .: {}
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+              f:type: {}
+          f:observedGeneration: {}
+          f:readyReplicas: {}
+          f:replicas: {}
+          f:updatedReplicas: {}
+      subresource: status
+  selfLink: /apis/apps/v1/namespaces/flux-system/deployments/notification-controller
+status:
+  observedGeneration: 1
+  replicas: 1
+  updatedReplicas: 1
+  readyReplicas: 1
+  availableReplicas: 1
+  conditions:
+    - type: Available
+      status: 'True'
+      lastUpdateTime: '2022-10-06T20:07:17Z'
+      lastTransitionTime: '2022-10-06T20:07:17Z'
+      reason: MinimumReplicasAvailable
+      message: Deployment has minimum availability.
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2022-10-06T20:07:17Z'
+      lastTransitionTime: '2022-10-06T20:06:47Z'
+      reason: NewReplicaSetAvailable
+      message: >-
+        ReplicaSet "notification-controller-8fd67fcff" has successfully
+        progressed.
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notification-controller
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: notification-controller
+      annotations:
+        prometheus.io/port: '8080'
+        prometheus.io/scrape: 'true'
+    spec:
+      volumes:
+        - name: temp
+          emptyDir: {}
+      containers:
+        - name: manager
+          image: ghcr.io/fluxcd/notification-controller:v0.23.5
+          args:
+            - '--watch-all-namespaces=true'
+            - '--log-level=info'
+            - '--log-encoding=json'
+            - '--enable-leader-election'
+          ports:
+            - name: http
+              containerPort: 9090
+              protocol: TCP
+            - name: http-webhook
+              containerPort: 9292
+              protocol: TCP
+            - name: http-prom
+              containerPort: 8080
+              protocol: TCP
+            - name: healthz
+              containerPort: 9440
+              protocol: TCP
+          env:
+            - name: RUNTIME_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+          resources:
+            limits:
+              cpu: '1'
+              memory: 1Gi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+          volumeMounts:
+            - name: temp
+              mountPath: /tmp
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: healthz
+              scheme: HTTP
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /readyz
+              port: healthz
+              scheme: HTTP
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            seccompProfile:
+              type: RuntimeDefault
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 10
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        kubernetes.io/os: linux
+      serviceAccountName: notification-controller
+      serviceAccount: notification-controller
+      securityContext:
+        fsGroup: 1337
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
